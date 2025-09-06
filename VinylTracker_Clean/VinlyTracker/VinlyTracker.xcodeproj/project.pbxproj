@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		E5394EF02E6C777C00F9ABEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5394ED72E6C777B00F9ABEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5394EDE2E6C777B00F9ABEE;
+			remoteInfo = VinlyTracker;
+		};
+		E5394EFA2E6C777C00F9ABEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5394ED72E6C777B00F9ABEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5394EDE2E6C777B00F9ABEE;
+			remoteInfo = VinlyTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E5394EDF2E6C777B00F9ABEE /* VinlyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinlyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5394EEF2E6C777C00F9ABEE /* VinlyTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinlyTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5394EF92E6C777C00F9ABEE /* VinlyTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinlyTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E5394EE12E6C777B00F9ABEE /* VinlyTracker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VinlyTracker;
+			sourceTree = "<group>";
+		};
+		E5394EF22E6C777C00F9ABEE /* VinlyTrackerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VinlyTrackerTests;
+			sourceTree = "<group>";
+		};
+		E5394EFC2E6C777C00F9ABEE /* VinlyTrackerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VinlyTrackerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5394EDC2E6C777B00F9ABEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5394EEC2E6C777C00F9ABEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5394EF62E6C777C00F9ABEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E5394ED62E6C777B00F9ABEE = {
+			isa = PBXGroup;
+			children = (
+				E5394EE12E6C777B00F9ABEE /* VinlyTracker */,
+				E5394EF22E6C777C00F9ABEE /* VinlyTrackerTests */,
+				E5394EFC2E6C777C00F9ABEE /* VinlyTrackerUITests */,
+				E5394EE02E6C777B00F9ABEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E5394EE02E6C777B00F9ABEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5394EDF2E6C777B00F9ABEE /* VinlyTracker.app */,
+				E5394EEF2E6C777C00F9ABEE /* VinlyTrackerTests.xctest */,
+				E5394EF92E6C777C00F9ABEE /* VinlyTrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5394EDE2E6C777B00F9ABEE /* VinlyTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5394F032E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTracker" */;
+			buildPhases = (
+				E5394EDB2E6C777B00F9ABEE /* Sources */,
+				E5394EDC2E6C777B00F9ABEE /* Frameworks */,
+				E5394EDD2E6C777B00F9ABEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E5394EE12E6C777B00F9ABEE /* VinlyTracker */,
+			);
+			name = VinlyTracker;
+			packageProductDependencies = (
+			);
+			productName = VinlyTracker;
+			productReference = E5394EDF2E6C777B00F9ABEE /* VinlyTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E5394EEE2E6C777C00F9ABEE /* VinlyTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5394F062E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTrackerTests" */;
+			buildPhases = (
+				E5394EEB2E6C777C00F9ABEE /* Sources */,
+				E5394EEC2E6C777C00F9ABEE /* Frameworks */,
+				E5394EED2E6C777C00F9ABEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5394EF12E6C777C00F9ABEE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E5394EF22E6C777C00F9ABEE /* VinlyTrackerTests */,
+			);
+			name = VinlyTrackerTests;
+			packageProductDependencies = (
+			);
+			productName = VinlyTrackerTests;
+			productReference = E5394EEF2E6C777C00F9ABEE /* VinlyTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E5394EF82E6C777C00F9ABEE /* VinlyTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5394F092E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTrackerUITests" */;
+			buildPhases = (
+				E5394EF52E6C777C00F9ABEE /* Sources */,
+				E5394EF62E6C777C00F9ABEE /* Frameworks */,
+				E5394EF72E6C777C00F9ABEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5394EFB2E6C777C00F9ABEE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E5394EFC2E6C777C00F9ABEE /* VinlyTrackerUITests */,
+			);
+			name = VinlyTrackerUITests;
+			packageProductDependencies = (
+			);
+			productName = VinlyTrackerUITests;
+			productReference = E5394EF92E6C777C00F9ABEE /* VinlyTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5394ED72E6C777B00F9ABEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					E5394EDE2E6C777B00F9ABEE = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					E5394EEE2E6C777C00F9ABEE = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = E5394EDE2E6C777B00F9ABEE;
+					};
+					E5394EF82E6C777C00F9ABEE = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = E5394EDE2E6C777B00F9ABEE;
+					};
+				};
+			};
+			buildConfigurationList = E5394EDA2E6C777B00F9ABEE /* Build configuration list for PBXProject "VinlyTracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5394ED62E6C777B00F9ABEE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E5394EE02E6C777B00F9ABEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5394EDE2E6C777B00F9ABEE /* VinlyTracker */,
+				E5394EEE2E6C777C00F9ABEE /* VinlyTrackerTests */,
+				E5394EF82E6C777C00F9ABEE /* VinlyTrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5394EDD2E6C777B00F9ABEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5394EED2E6C777C00F9ABEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5394EF72E6C777C00F9ABEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5394EDB2E6C777B00F9ABEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5394EEB2E6C777C00F9ABEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5394EF52E6C777C00F9ABEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5394EF12E6C777C00F9ABEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5394EDE2E6C777B00F9ABEE /* VinlyTracker */;
+			targetProxy = E5394EF02E6C777C00F9ABEE /* PBXContainerItemProxy */;
+		};
+		E5394EFB2E6C777C00F9ABEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5394EDE2E6C777B00F9ABEE /* VinlyTracker */;
+			targetProxy = E5394EFA2E6C777C00F9ABEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E5394F012E6C777C00F9ABEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E5394F022E6C777C00F9ABEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5394F042E6C777C00F9ABEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VinlyTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = 2PA85SU4UQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E5394F052E6C777C00F9ABEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VinlyTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = 2PA85SU4UQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E5394F072E6C777C00F9ABEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2PA85SU4UQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinlyTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VinlyTracker";
+			};
+			name = Debug;
+		};
+		E5394F082E6C777C00F9ABEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2PA85SU4UQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinlyTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VinlyTracker";
+			};
+			name = Release;
+		};
+		E5394F0A2E6C777C00F9ABEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2PA85SU4UQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VinlyTracker;
+			};
+			name = Debug;
+		};
+		E5394F0B2E6C777C00F9ABEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2PA85SU4UQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VinlyTracker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5394EDA2E6C777B00F9ABEE /* Build configuration list for PBXProject "VinlyTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5394F012E6C777C00F9ABEE /* Debug */,
+				E5394F022E6C777C00F9ABEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5394F032E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5394F042E6C777C00F9ABEE /* Debug */,
+				E5394F052E6C777C00F9ABEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5394F062E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5394F072E6C777C00F9ABEE /* Debug */,
+				E5394F082E6C777C00F9ABEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5394F092E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5394F0A2E6C777C00F9ABEE /* Debug */,
+				E5394F0B2E6C777C00F9ABEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5394ED72E6C777B00F9ABEE /* Project object */;
+}
