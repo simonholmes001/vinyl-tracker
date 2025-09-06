@@ -5,9 +5,9 @@
 [![SwiftUI](https://img.shields.io/badge/SwiftUI-5.0-blue.svg)](https://developer.apple.com/swiftui/)
 [![Xcode](https://img.shields.io/badge/Xcode-15.0%2B-blue.svg)](https://developer.apple.com/xcode/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
+[![CI](https://github.com/simonholmes001/vinyl-tracker/workflows/iOS%20CI/badge.svg)](https://github.com/simonholmes001/vinyl-tracker/actions/workflows/ios-ci.yml)
 [![Test Coverage](https://img.shields.io/badge/coverage-95%25%2B-brightgreen.svg)](#test-coverage)
-[![Code Style](https://img.shields.io/badge/code%20style-SwiftLint-orange.svg)](https://github.com/realm/SwiftLint)
+[![Code Style](https://img.shields.io/badge/code%20style-SwiftLint-orange.svg)](.swiftlint.yml)
 [![Architecture](https://img.shields.io/badge/architecture-MVVM-lightgrey.svg)](#technical-architecture)
 [![TDD](https://img.shields.io/badge/TDD-enabled-blue.svg)](#test-driven-development-implementation)
 
@@ -107,6 +107,51 @@ Add camera usage description to your `Info.plist`:
    - `ScannerView`: Primary scanning interface with camera/photo library integration
    - `CollectionView`: Album collection browser with search and filtering
    - `ContentView`: Main tab-based navigation
+
+## 🚀 Continuous Integration & Deployment
+
+### Automated Testing Pipeline
+This project uses **GitHub Actions** for continuous integration, ensuring code quality and reliability:
+
+#### 🔄 **CI Workflow** (`.github/workflows/ios-ci.yml`)
+- **Triggers**: Every push to `main`, `develop`, or `feature/*` branches
+- **Environment**: macOS with Xcode 15.0+
+- **Steps**:
+  1. **Clean Build**: Ensures fresh compilation environment
+  2. **Build Verification**: Compiles project for iOS Simulator
+  3. **Unit Test Execution**: Runs comprehensive test suite
+  4. **Coverage Analysis**: Generates and validates code coverage (80% minimum)
+  5. **Artifact Upload**: Stores test results and coverage reports
+
+#### 🔍 **Pull Request Checks** (`.github/workflows/pr-checks.yml`)
+- **Enhanced validation** for pull requests to `main`/`develop`
+- **SwiftLint integration** for code style enforcement
+- **Coverage reporting** with automatic PR comments
+- **Delta analysis** on changed files only
+
+#### 📊 **Quality Gates**
+- ✅ **Minimum 80% code coverage** (currently 95%+)
+- ✅ **SwiftLint compliance** with custom rules
+- ✅ **Successful build** on iOS Simulator
+- ✅ **All unit tests passing**
+
+#### 🛠 **Code Quality Tools**
+- **SwiftLint**: Enforces Swift style and conventions
+- **Xcode Code Coverage**: Tracks test coverage metrics
+- **Custom Rules**: No print statements, proper error handling
+
+### Local Development
+```bash
+# Run tests locally
+cd VinylTracker_Clean/VinlyTracker
+xcodebuild test -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
+
+# Generate coverage report
+xcrun xccov view --report TestResults.xcresult
+
+# Run SwiftLint
+swiftlint lint --path VinlyTracker --path VinlyTrackerTests
+```
 
 ## TDD Implementation
 

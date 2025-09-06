@@ -1,0 +1,102 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Test and Build
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '15.0'
+        
+    - name: Cache Swift Package Manager
+      uses: actions/cache@v3
+      with:
+        path: |
+          VinylTracker_Clean/VinlyTracker/VinlyTracker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+          ~/Library/Developer/Xcode/DerivedData
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
+          
+    - name: Clean build folder
+      run: |
+        cd VinylTracker_Clean/VinlyTracker
+        xcodebuild clean -project VinlyTracker.xcodeproj -scheme VinlyTracker
+        
+    - name: Build project
+      run: |
+        cd VinylTracker_Clean/VinlyTracker
+        xcodebuild build -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
+        
+    - name: Run unit tests
+      run: |
+        cd VinylTracker_Clean/VinlyTracker
+        xcodebuild test -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' -resultBundlePath TestResults.xcresult
+        
+    - name: Generate code coverage report
+      run: |
+        cd VinylTracker_Clean/VinlyTracker
+        xcrun xccov view --report --json TestResults.xcresult > coverage.json
+        
+    - name: Parse coverage percentage
+      id: coverage
+      run: |
+        cd VinylTracker_Clean/VinlyTracker
+        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinlyTracker.app" | awk '{print $4}' | sed 's/%//')
+        echo "coverage=$COVERAGE" >> $GITHUB_OUTPUT
+        echo "Code coverage: $COVERAGE%"
+        
+    - name: Check minimum coverage threshold
+      run: |
+        cd VinylTracker_Clean/VinlyTracker
+        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinlyTracker.app" | awk '{print $4}' | sed 's/%//')
+        THRESHOLD=80
+        if (( $(echo "$COVERAGE < $THRESHOLD" | bc -l) )); then
+          echo "❌ Code coverage ($COVERAGE%) is below minimum threshold ($THRESHOLD%)"
+          exit 1
+        else
+          echo "✅ Code coverage ($COVERAGE%) meets minimum threshold ($THRESHOLD%)"
+        fi
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-results
+        path: VinylTracker_Clean/VinlyTracker/TestResults.xcresult
+        
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: coverage-report
+        path: VinylTracker_Clean/VinlyTracker/coverage.json
+
+  # Optional: SwiftLint for code quality
+  swiftlint:
+    name: SwiftLint
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install SwiftLint
+      run: brew install swiftlint
+      
+    - name: Run SwiftLint
+      run: |
+        cd VinylTracker_Clean/VinlyTracker
+        swiftlint --reporter github-actions-logging
