@@ -8,7 +8,6 @@ struct ScannerView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var showingCamera = false
-    @State private var showingPhotoLibrary = false
     @State private var showingPermissionView = false
     @State private var isProcessing = false
     @State private var errorMessage = ""
@@ -30,7 +29,7 @@ struct ScannerView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     
-                    Text("Take a photo of an album cover or choose from your photo library")
+                    Text("Take a photo of an album cover to add it to your collection")
                         .font(.body)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
@@ -61,30 +60,6 @@ struct ScannerView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         .disabled(!CameraPermissionManager.isCameraAvailable)
-                        
-                        // Photo Library Button
-                        Button(action: openPhotoLibrary) {
-                            HStack {
-                                Image(systemName: "photo.on.rectangle")
-                                Text("Choose from Library")
-                            }
-                            .font(.headline)
-                            .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(.bordered)
-                        .disabled(!CameraPermissionManager.isPhotoLibraryAvailable)
-                        
-                        // Mock Scan Button (for testing)
-                        Button(action: simulateScan) {
-                            HStack {
-                                Image(systemName: "wand.and.rays")
-                                Text("Mock Scan (Demo)")
-                            }
-                            .font(.subheadline)
-                            .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(.borderless)
-                        .foregroundColor(.secondary)
                     }
                     .padding(.horizontal, 40)
                 }
@@ -102,13 +77,6 @@ struct ScannerView: View {
             }
             .sheet(isPresented: $showingCamera) {
                 ImagePicker(sourceType: .camera) { image in
-                    handleCapturedImage(image)
-                } onError: { error in
-                    showError(error)
-                }
-            }
-            .sheet(isPresented: $showingPhotoLibrary) {
-                ImagePicker(sourceType: .photoLibrary) { image in
                     handleCapturedImage(image)
                 } onError: { error in
                     showError(error)
@@ -137,10 +105,6 @@ struct ScannerView: View {
                 showingPermissionView = true
             }
         }
-    }
-    
-    private func openPhotoLibrary() {
-        showingPhotoLibrary = true
     }
     
     private func handleCapturedImage(_ image: UIImage) {
@@ -173,21 +137,6 @@ struct ScannerView: View {
         // Simulate successful recognition
         let recognizedAlbum = mockAlbums.randomElement()!
         onAlbumScanned(recognizedAlbum)
-    }
-    
-    private func simulateScan() {
-        isProcessing = true
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let mockAlbums = [
-                Album(title: "Random Album", artist: "Demo Artist", year: 2024, genre: "Demo"),
-                Album(title: "Test Record", artist: "Test Band", year: 2023, genre: "Test Genre")
-            ]
-            
-            isProcessing = false
-            let album = mockAlbums.randomElement()!
-            onAlbumScanned(album)
-        }
     }
     
     private func showError(_ message: String) {

@@ -12,7 +12,7 @@ final class ScannerViewTests: XCTestCase {
     func testScannerView_InitialState_ShouldBeCorrect() {
         // Given - New ScannerView
         var scannedAlbum: Album?
-        let scannerView = ScannerView { album in
+        let _ = ScannerView { album in
             scannedAlbum = album
         }
         
