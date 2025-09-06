@@ -53,10 +53,10 @@ jobs:
         xcodebuild clean -project VinlyTracker.xcodeproj -scheme VinlyTracker
         
         # Build
-        xcodebuild build -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
+        xcodebuild build -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1'
         
         # Run tests with coverage
-        xcodebuild test -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
+        xcodebuild test -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1' -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
         
     - name: Generate and check coverage
       id: coverage-check

@@ -15,6 +15,26 @@
 - **NO pull requests without accompanying tests**
 - **NO exceptions to TDD workflow**
 
+### **🚫 AUTOMATIC COMMIT BLOCKING**
+**Pre-commit hooks enforce TDD compliance:**
+- ✅ **All unit tests must pass** before any commit
+- ❌ **Commits fail immediately** if tests fail
+- 🧪 **Coverage checking** on every commit
+- 📊 **Immediate terminal feedback** for developers
+
+**Example of blocked commit:**
+```bash
+$ git commit -m "add new feature"
+🧪 Running unit tests before commit...
+❌ COMMIT BLOCKED: Unit tests failed!
+🚨 TDD VIOLATION DETECTED:
+   Tests are failing - this violates our TDD standards
+📋 Required actions:
+   1. Fix all failing tests
+   2. Ensure all tests pass before committing
+   3. Follow the Red-Green-Refactor cycle
+```
+
 ---
 
 ## 📋 **Pre-Development Checklist**
@@ -93,6 +113,25 @@ VinylTracker/
     ├── Extensions.swift
     └── ExtensionsTests.swift
 ```
+
+### **Configuration File Naming Standards**
+
+#### **YAML Files - Always use `.yaml` extension**
+```
+✅ CORRECT:
+.github/workflows/ios-ci.yaml
+.github/workflows/pr-checks.yaml
+.swiftlint.yaml
+docker-compose.yaml
+
+❌ INCORRECT:
+.github/workflows/ios-ci.yml
+.github/workflows/pr-checks.yml
+.swiftlint.yml
+docker-compose.yml
+```
+
+**Rationale**: The `.yaml` extension is the official, unambiguous extension for YAML files as defined by the YAML specification. While `.yml` is commonly used, `.yaml` provides better clarity and consistency across all platforms and tools.
 
 ### **Test Naming Convention**
 ```swift

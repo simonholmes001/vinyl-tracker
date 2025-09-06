@@ -5,9 +5,9 @@
 [![SwiftUI](https://img.shields.io/badge/SwiftUI-5.0-blue.svg)](https://developer.apple.com/swiftui/)
 [![Xcode](https://img.shields.io/badge/Xcode-15.0%2B-blue.svg)](https://developer.apple.com/xcode/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![CI](https://github.com/simonholmes001/vinyl-tracker/workflows/iOS%20CI/badge.svg)](https://github.com/simonholmes001/vinyl-tracker/actions/workflows/ios-ci.yml)
+[![CI](https://github.com/simonholmes001/vinyl-tracker/workflows/iOS%20CI/badge.svg)](https://github.com/simonholmes001/vinyl-tracker/actions/workflows/ios-ci.yaml)
 [![Test Coverage](https://img.shields.io/badge/coverage-95%25%2B-brightgreen.svg)](#test-coverage)
-[![Code Style](https://img.shields.io/badge/code%20style-SwiftLint-orange.svg)](.swiftlint.yml)
+[![Code Style](https://img.shields.io/badge/code%20style-SwiftLint-orange.svg)](.swiftlint.yaml)
 [![Architecture](https://img.shields.io/badge/architecture-MVVM-lightgrey.svg)](#technical-architecture)
 [![TDD](https://img.shields.io/badge/TDD-enabled-blue.svg)](#test-driven-development-implementation)
 
@@ -113,7 +113,7 @@ Add camera usage description to your `Info.plist`:
 ### Automated Testing Pipeline
 This project uses **GitHub Actions** for continuous integration, ensuring code quality and reliability:
 
-#### 🔄 **CI Workflow** (`.github/workflows/ios-ci.yml`)
+#### 🔄 **CI Workflow** (`.github/workflows/ios-ci.yaml`)
 - **Triggers**: Every push to `main`, `develop`, or `feature/*` branches
 - **Environment**: macOS with Xcode 15.0+
 - **Steps**:
@@ -123,7 +123,7 @@ This project uses **GitHub Actions** for continuous integration, ensuring code q
   4. **Coverage Analysis**: Generates and validates code coverage (80% minimum)
   5. **Artifact Upload**: Stores test results and coverage reports
 
-#### 🔍 **Pull Request Checks** (`.github/workflows/pr-checks.yml`)
+#### 🔍 **Pull Request Checks** (`.github/workflows/pr-checks.yaml`)
 - **Enhanced validation** for pull requests to `main`/`develop`
 - **SwiftLint integration** for code style enforcement
 - **Coverage reporting** with automatic PR comments

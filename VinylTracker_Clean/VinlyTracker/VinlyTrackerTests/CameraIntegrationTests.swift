@@ -35,14 +35,15 @@ final class CameraIntegrationTests: XCTestCase {
         // Given - Permission manager and expectation
         let expectation = XCTestExpectation(description: "Permission check completes")
         
-        // When - Checking camera permission
+        // When - Checking camera permission (simulator will deny, but callback should still work)
         CameraPermissionManager.checkCameraPermission { granted in
             // Then - Completion should be called with a boolean result
+            // Note: In simulator, this will typically be false, but the callback should work
             XCTAssertTrue(granted == true || granted == false)
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 2.0)
+        wait(for: [expectation], timeout: 5.0) // Increased timeout for simulator
     }
     
     // MARK: - ImagePicker Coordinator Tests

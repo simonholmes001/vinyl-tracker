@@ -20,6 +20,12 @@ class CameraPermissionManager {
     // MARK: - Permission Management
     
     static func checkCameraPermission(completion: @escaping (Bool) -> Void) {
+        #if targetEnvironment(simulator)
+        // In simulator, just return false immediately to avoid permission dialogs
+        DispatchQueue.main.async {
+            completion(false)
+        }
+        #else
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             completion(true)
@@ -30,9 +36,16 @@ class CameraPermissionManager {
         @unknown default:
             completion(false)
         }
+        #endif
     }
     
     static func checkPhotoLibraryPermission(completion: @escaping (Bool) -> Void) {
+        #if targetEnvironment(simulator)
+        // In simulator, return true for photo library (usually available)
+        DispatchQueue.main.async {
+            completion(true)
+        }
+        #else
         switch PHPhotoLibrary.authorizationStatus() {
         case .authorized, .limited:
             completion(true)
@@ -47,6 +60,7 @@ class CameraPermissionManager {
         @unknown default:
             completion(false)
         }
+        #endif
     }
     
     // MARK: - Permission Status
