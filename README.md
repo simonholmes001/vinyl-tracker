@@ -15,6 +15,8 @@
 
 This directory contains a complete iOS application for managing vinyl record collections, built using **Test-Driven Development (TDD)** principles with SwiftUI and MVVM architecture.
 
+**🔧 Enhanced TDD Enforcement**: This project now includes a robust pre-commit hook system that ensures build failures automatically block commits, maintaining strict TDD standards throughout development.
+
 A fully functional iOS app that allows users to:
 - Scan album covers using the camera for automatic recognition
 - Manually add albums to their collection
