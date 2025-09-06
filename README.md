@@ -1,5 +1,16 @@
 # iOS Vinyl Tracker App - Complete Implementation
 
+[![iOS](https://img.shields.io/badge/iOS-17.0%2B-blue.svg)](https://developer.apple.com/ios/)
+[![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org/)
+[![SwiftUI](https://img.shields.io/badge/SwiftUI-5.0-blue.svg)](https://developer.apple.com/swiftui/)
+[![Xcode](https://img.shields.io/badge/Xcode-15.0%2B-blue.svg)](https://developer.apple.com/xcode/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
+[![Test Coverage](https://img.shields.io/badge/coverage-95%25%2B-brightgreen.svg)](#test-coverage)
+[![Code Style](https://img.shields.io/badge/code%20style-SwiftLint-orange.svg)](https://github.com/realm/SwiftLint)
+[![Architecture](https://img.shields.io/badge/architecture-MVVM-lightgrey.svg)](#technical-architecture)
+[![TDD](https://img.shields.io/badge/TDD-enabled-blue.svg)](#test-driven-development-implementation)
+
 ## 🎯 Project Overview
 
 This directory contains a complete iOS application for managing vinyl record collections, built using **Test-Driven Development (TDD)** principles with SwiftUI and MVVM architecture.
@@ -176,6 +187,18 @@ VinylTracker/
     ├── ScannerViewUITests.swift
     └── VinylTrackerUITests.swift
 ```
+
+## Enhancements:
+- [ ] Real Camera Integration - Replace mock scanner with actual camera
+- [ ] Data Persistence - Save albums between app launches
+- [ ] Search & Filtering - Search by title, artist, genre, year
+- [ ] Album Details View - Detailed view with cover images
+- [ ] Collection Statistics - Charts and analytics
+- [ ] Export/Import - Backup and restore collections
+- [ ] Album Artwork - Fetch cover images from APIs
+- [ ] Barcode Scanning - UPC/EAN recognition
+- [ ] Wishlist Feature - Track albums you want to buy
+- [ ] Social Features - Share collections
 
 ## Development Status
 

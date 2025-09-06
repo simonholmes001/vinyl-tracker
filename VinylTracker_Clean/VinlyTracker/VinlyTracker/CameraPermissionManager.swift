@@ -1,0 +1,73 @@
+// CameraPermissionManager.swift
+// Camera permissions and availability management
+
+import AVFoundation
+import Photos
+import UIKit
+
+class CameraPermissionManager {
+    
+    // MARK: - Camera Availability
+    
+    static var isCameraAvailable: Bool {
+        return UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    
+    static var isPhotoLibraryAvailable: Bool {
+        return UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
+    }
+    
+    // MARK: - Permission Management
+    
+    static func checkCameraPermission(completion: @escaping (Bool) -> Void) {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            completion(true)
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: completion)
+        case .denied, .restricted:
+            completion(false)
+        @unknown default:
+            completion(false)
+        }
+    }
+    
+    static func checkPhotoLibraryPermission(completion: @escaping (Bool) -> Void) {
+        switch PHPhotoLibrary.authorizationStatus() {
+        case .authorized, .limited:
+            completion(true)
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { status in
+                DispatchQueue.main.async {
+                    completion(status == .authorized || status == .limited)
+                }
+            }
+        case .denied, .restricted:
+            completion(false)
+        @unknown default:
+            completion(false)
+        }
+    }
+    
+    // MARK: - Permission Status
+    
+    static var cameraPermissionStatus: AVAuthorizationStatus {
+        return AVCaptureDevice.authorizationStatus(for: .video)
+    }
+    
+    static var photoLibraryPermissionStatus: PHAuthorizationStatus {
+        return PHPhotoLibrary.authorizationStatus()
+    }
+    
+    // MARK: - Settings Navigation
+    
+    static func openSettings() {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: nil)
+        }
+    }
+}
