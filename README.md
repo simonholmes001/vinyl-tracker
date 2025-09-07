@@ -237,6 +237,7 @@ VinylTracker/
 
 ## Enhancements:
 - [x] Real Camera Integration - Replace mock scanner with actual camera
+- [ ] Redesign home screen - should see the possibilities of looking at your collection or adding an album
 - [ ] Ask to add an album to the collection - and extract relavent data for the data base
 - [ ] Data Persistence - Save albums between app launches
 - [ ] Search & Filtering - Search by title, artist, genre, year
