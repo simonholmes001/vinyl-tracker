@@ -214,10 +214,10 @@ class AddAlbumViewTests: XCTestCase {
 
     func testAlbumCreation_performance() {
         measure {
-            for i in 0..<1000 {
+            for index in 0..<1000 {
                 let album = Album(
-                    title: "Performance Test Album \(i)",
-                    artist: "Performance Test Artist \(i)"
+                    title: "Performance Test Album \(index)",
+                    artist: "Performance Test Artist \(index)"
                 )
                 XCTAssertNotNil(album.id)
             }

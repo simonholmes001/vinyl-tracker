@@ -72,8 +72,10 @@ struct CameraPermissionView: View {
 
     private var permissionMessage: String {
         if CameraPermissionManager.isRunningInSimulator {
-            return "To scan album covers, VinylTracker needs camera access. On a real device, you can enable this in Settings > Privacy & Security > Camera > VinylTracker. Camera functionality is limited in the simulator."
-        } else {
+            return """
+                To scan album covers, VinylTracker needs camera access. On a real device, you can enable this in \
+                Settings > Privacy & Security > Camera > VinylTracker. Camera functionality is limited in the simulator.
+                """        } else {
             return "To scan album covers, VinylTracker needs access to your camera. Please enable camera access in Settings."
         }
     }
