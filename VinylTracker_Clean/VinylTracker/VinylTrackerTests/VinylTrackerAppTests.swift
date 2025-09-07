@@ -9,7 +9,7 @@ final class VinylTrackerAppTests: XCTestCase {
         let app = VinylTrackerApp()
         XCTAssertNotNil(app)
     }
-    
+
     func testApp_body() {
         let app = VinylTrackerApp()
         XCTAssertNotNil(app.body)

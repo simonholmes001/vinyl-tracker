@@ -9,13 +9,13 @@ final class ContentViewTests: XCTestCase {
         let view = ContentView()
         XCTAssertNotNil(view)
     }
-    
+
     func testEmptyStateView_showsCorrectText() {
         let view = EmptyStateView()
         // This is a basic smoke test for SwiftUI view
         XCTAssertNotNil(view.body)
     }
-    
+
     func testAlbumListView_rendersAlbums() {
         let albums = [
             Album(title: "Test", artist: "Artist", year: 2020, genre: "Rock"),
@@ -24,13 +24,13 @@ final class ContentViewTests: XCTestCase {
         let view = AlbumListView(albums: albums, onDelete: { _ in })
         XCTAssertEqual(view.albums.count, 2)
     }
-    
+
     func testAlbumRowView_rendersAlbum() {
         let album = Album(title: "Test", artist: "Artist", year: 2020, genre: "Rock")
         let view = AlbumRowView(album: album)
         XCTAssertEqual(view.album.title, "Test")
     }
-    
+
     @MainActor
     func testAlbumCollectionViewModel_addAlbum() {
         let viewModel = AlbumCollectionViewModel()

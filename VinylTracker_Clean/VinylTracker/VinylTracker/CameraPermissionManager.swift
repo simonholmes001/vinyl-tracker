@@ -6,19 +6,19 @@ import Photos
 import UIKit
 
 class CameraPermissionManager {
-    
+
     // MARK: - Camera Availability
-    
+
     static var isCameraAvailable: Bool {
         return UIImagePickerController.isSourceTypeAvailable(.camera)
     }
-    
+
     static var isPhotoLibraryAvailable: Bool {
         return UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
     }
-    
+
     // MARK: - Permission Management
-    
+
     static func checkCameraPermission(completion: @escaping (Bool) -> Void) {
         #if targetEnvironment(simulator)
         // In simulator, just return false immediately to avoid permission dialogs
@@ -38,7 +38,7 @@ class CameraPermissionManager {
         }
         #endif
     }
-    
+
     static func checkPhotoLibraryPermission(completion: @escaping (Bool) -> Void) {
         #if targetEnvironment(simulator)
         // In simulator, return true for photo library (usually available)
@@ -62,25 +62,25 @@ class CameraPermissionManager {
         }
         #endif
     }
-    
+
     // MARK: - Permission Status
-    
+
     static var cameraPermissionStatus: AVAuthorizationStatus {
         return AVCaptureDevice.authorizationStatus(for: .video)
     }
-    
+
     static var photoLibraryPermissionStatus: PHAuthorizationStatus {
         return PHPhotoLibrary.authorizationStatus()
     }
-    
+
     // MARK: - Settings Navigation
-    
+
     static func openSettings(completion: @escaping (Bool) -> Void = { _ in }) {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
             completion(false)
             return
         }
-        
+
         if UIApplication.shared.canOpenURL(settingsUrl) {
             UIApplication.shared.open(settingsUrl) { success in
                 completion(success)
@@ -89,9 +89,9 @@ class CameraPermissionManager {
             completion(false)
         }
     }
-    
+
     // MARK: - Simulator Detection
-    
+
     static var isRunningInSimulator: Bool {
         #if targetEnvironment(simulator)
         return true

@@ -8,45 +8,45 @@ struct CameraPermissionView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showingAlert = false
     @State private var alertMessage = ""
-    
+
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
                 Spacer()
-                
+
                 // Icon
                 Image(systemName: "camera.fill")
                     .font(.system(size: 80))
                     .foregroundColor(.red)
-                
+
                 // Title and Description
                 VStack(spacing: 16) {
                     Text("Camera Access Required")
                         .font(.title2)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
-                    
+
                     Text(permissionMessage)
                         .font(.body)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                 }
-                
+
                 // Action Buttons
                 VStack(spacing: 12) {
                     Button("Open Settings") {
                         openSettingsWithFeedback()
                     }
                     .buttonStyle(.borderedProminent)
-                    
+
                     Button("Cancel") {
                         onDismiss()
                     }
                     .buttonStyle(.bordered)
                 }
                 .padding(.horizontal, 40)
-                
+
                 Spacer()
             }
             .navigationTitle("Camera Permission")
@@ -59,7 +59,7 @@ struct CameraPermissionView: View {
                 }
             }
             .alert("Settings", isPresented: $showingAlert) {
-                Button("OK") { 
+                Button("OK") {
                     if CameraPermissionManager.isRunningInSimulator {
                         onDismiss()
                     }
@@ -69,7 +69,7 @@ struct CameraPermissionView: View {
             }
         }
     }
-    
+
     private var permissionMessage: String {
         if CameraPermissionManager.isRunningInSimulator {
             return "To scan album covers, VinylTracker needs camera access. On a real device, you can enable this in Settings > Privacy & Security > Camera > VinylTracker. Camera functionality is limited in the simulator."
@@ -77,7 +77,7 @@ struct CameraPermissionView: View {
             return "To scan album covers, VinylTracker needs access to your camera. Please enable camera access in Settings."
         }
     }
-    
+
     private func openSettingsWithFeedback() {
         if CameraPermissionManager.isRunningInSimulator {
             alertMessage = "Camera permissions are limited in the iOS Simulator. On a real device, this would open your app's camera settings where you can enable camera access."

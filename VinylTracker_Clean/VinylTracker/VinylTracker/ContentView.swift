@@ -9,7 +9,7 @@ struct ContentView: View {
     @State private var showingAddForm = false
     @State private var showingDuplicateAlert = false
     @State private var pendingAlbum: Album?
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -26,7 +26,7 @@ struct ContentView: View {
                         Image(systemName: "camera")
                     }
                     .accessibilityLabel("Scan Album")
-                    
+
                     Button(action: { showingAddForm = true }) {
                         Image(systemName: "plus")
                     }
@@ -60,7 +60,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     private func handleNewAlbum(_ album: Album) {
         if viewModel.hasDuplicate(album) {
             pendingAlbum = album
@@ -77,11 +77,11 @@ struct EmptyStateView: View {
             Image(systemName: "music.note")
                 .font(.system(size: 60))
                 .foregroundColor(.secondary)
-            
+
             Text("No Albums Yet")
                 .font(.title2)
                 .fontWeight(.medium)
-            
+
             Text("Start building your vinyl collection by scanning album covers or adding them manually")
                 .font(.body)
                 .foregroundColor(.secondary)
@@ -95,7 +95,7 @@ struct EmptyStateView: View {
 struct AlbumListView: View {
     let albums: [Album]
     let onDelete: (IndexSet) -> Void
-    
+
     var body: some View {
         List {
             ForEach(albums) { album in
@@ -109,26 +109,26 @@ struct AlbumListView: View {
 
 struct AlbumRowView: View {
     let album: Album
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(album.displayTitle)
                     .font(.headline)
                     .lineLimit(1)
-                
+
                 Text(album.displayArtist)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .lineLimit(1)
-                
+
                 HStack {
                     if !album.yearString.isEmpty {
                         Text(album.yearString)
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
-                    
+
                     if !album.genre.isEmpty {
                         Text("• \(album.genre)")
                             .font(.caption)
@@ -136,9 +136,9 @@ struct AlbumRowView: View {
                     }
                 }
             }
-            
+
             Spacer()
-            
+
             if !album.genre.isEmpty {
                 Text(album.genre)
                     .font(.caption)
@@ -158,28 +158,28 @@ struct AlbumRowView: View {
 @MainActor
 class AlbumCollectionViewModel: ObservableObject {
     @Published var albums: [Album] = []
-    
+
     func addAlbum(_ album: Album, allowDuplicates: Bool = false) {
         guard album.isValid else { return }
-        
+
         if !allowDuplicates && hasDuplicate(album) {
             return // Duplicate detected
         }
-        
+
         albums.append(album)
         sortAlbums()
     }
-    
+
     func deleteAlbums(at offsets: IndexSet) {
         albums.remove(atOffsets: offsets)
     }
-    
+
     func hasDuplicate(_ album: Album) -> Bool {
         albums.contains { existing in
             existing.isSimilarTo(album)
         }
     }
-    
+
     private func sortAlbums() {
         albums.sort { first, second in
             if first.artist.lowercased() == second.artist.lowercased() {
@@ -193,4 +193,3 @@ class AlbumCollectionViewModel: ObservableObject {
 #Preview {
     ContentView()
 }
-
