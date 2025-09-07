@@ -1,0 +1,128 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pr-checks:
+    name: PR Quality Checks
+    runs-on: macos-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history for better diff analysis
+        
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '16.2'
+        
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        key: ${{ runner.os }}-xcode-${{ hashFiles('**/Package.resolved') }}
+        
+    - name: Install dependencies
+      run: |
+        brew install swiftlint
+        
+    - name: Run SwiftLint on changed files
+      run: |
+        cd VinylTracker_Clean/VinylTracker
+        # Get list of changed Swift files
+        CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- "*.swift" | tr '\n' ' ')
+        if [ ! -z "$CHANGED_FILES" ]; then
+          echo "Running SwiftLint on changed files: $CHANGED_FILES"
+          swiftlint lint --path VinylTracker --path VinylTrackerTests --reporter github-act
+        else
+          echo "No Swift files changed"
+        fi
+        
+    - name: Build and test
+      run: |
+        cd VinylTracker_Clean/VinylTracker
+        
+        # Clean build
+        xcodebuild clean -project VinylTracker.xcodeproj -scheme VinylTracker
+        
+        # Build
+        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker 
+        
+        # Run tests with coverage
+        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
+        
+    - name: Generate and check coverage
+      id: coverage-check
+      run: |
+        cd VinylTracker_Clean/VinylTracker
+        
+        # Generate coverage report
+        xcrun xccov view --report TestResults.xcresult
+        
+        # Extract coverage percentage
+        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinylTracker.app" | awk '{print $4}' | sed 's/%//')
+        echo "Current coverage: $COVERAGE%"
+        
+        # Set minimum threshold
+        THRESHOLD=80
+        
+        # Check if coverage meets threshold
+        if (( $(echo "$COVERAGE < $THRESHOLD" | bc -l) )); then
+          echo "::error::Code coverage ($COVERAGE%) is below minimum threshold ($THRESHOLD%)"
+          echo "coverage_status=failed" >> $GITHUB_OUTPUT
+          exit 1
+        else
+          echo "::notice::Code coverage ($COVERAGE%) meets minimum threshold ($THRESHOLD%)"
+          echo "coverage_status=passed" >> $GITHUB_OUTPUT
+        fi
+        
+        echo "coverage_percentage=$COVERAGE" >> $GITHUB_OUTPUT
+        
+    - name: Comment PR with coverage
+      uses: actions/github-script@v6
+      if: always()
+      with:
+        script: |
+          const coverage = '${{ steps.coverage-check.outputs.coverage_percentage }}';
+          const status = '${{ steps.coverage-check.outputs.coverage_status }}';
+          const threshold = '80';
+          
+          const coverageEmoji = parseFloat(coverage) >= parseFloat(threshold) ? '✅' : '❌';
+          const statusText = status === 'passed' ? 'PASSED' : 'FAILED';
+          
+          const comment = `## ${coverageEmoji} Test Coverage Report
+          
+          **Coverage:** ${coverage}% (Threshold: ${threshold}%)
+          **Status:** ${statusText}
+          
+          ${status === 'passed' ? 
+            '🎉 Great job! Your code coverage meets the minimum threshold.' : 
+            '⚠️ Code coverage is below the minimum threshold. Please add more tests.'}
+          
+          <details>
+          <summary>View detailed coverage report</summary>
+          
+          You can download the full coverage report from the workflow artifacts.
+          </details>`;
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
+          
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: pr-test-results-${{ github.event.number }}
+        retention-days: 30
+        if-no-files-found: warn

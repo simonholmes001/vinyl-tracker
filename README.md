@@ -1,8 +1,21 @@
 # iOS Vinyl Tracker App - Complete Implementation
 
+[![iOS](https://img.shields.io/badge/iOS-17.0%2B-blue.svg)](https://developer.apple.com/ios/)
+[![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org/)
+[![SwiftUI](https://img.shields.io/badge/SwiftUI-5.0-blue.svg)](https://developer.apple.com/swiftui/)
+[![Xcode](https://img.shields.io/badge/Xcode-15.0%2B-blue.svg)](https://developer.apple.com/xcode/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![CI](https://github.com/simonholmes001/vinyl-tracker/workflows/iOS%20CI/badge.svg)](https://github.com/simonholmes001/vinyl-tracker/actions/workflows/ios-ci.yaml)
+[![Test Coverage](https://img.shields.io/badge/coverage-95%25%2B-brightgreen.svg)](#test-coverage)
+[![Code Style](https://img.shields.io/badge/code%20style-SwiftLint-orange.svg)](.swiftlint.yaml)
+[![Architecture](https://img.shields.io/badge/architecture-MVVM-lightgrey.svg)](#technical-architecture)
+[![TDD](https://img.shields.io/badge/TDD-enabled-blue.svg)](#test-driven-development-implementation)
+
 ## 🎯 Project Overview
 
 This directory contains a complete iOS application for managing vinyl record collections, built using **Test-Driven Development (TDD)** principles with SwiftUI and MVVM architecture.
+
+**🔧 Enhanced TDD Enforcement**: This project now includes a robust pre-commit hook system that ensures build failures automatically block commits, maintaining strict TDD standards throughout development.
 
 A fully functional iOS app that allows users to:
 - Scan album covers using the camera for automatic recognition
@@ -97,6 +110,51 @@ Add camera usage description to your `Info.plist`:
    - `CollectionView`: Album collection browser with search and filtering
    - `ContentView`: Main tab-based navigation
 
+## 🚀 Continuous Integration & Deployment
+
+### Automated Testing Pipeline
+This project uses **GitHub Actions** for continuous integration, ensuring code quality and reliability:
+
+#### 🔄 **CI Workflow** (`.github/workflows/ios-ci.yaml`)
+- **Triggers**: Every push to `main`, `develop`, or `feature/*` branches
+- **Environment**: macOS with Xcode 15.0+
+- **Steps**:
+  1. **Clean Build**: Ensures fresh compilation environment
+  2. **Build Verification**: Compiles project for iOS Simulator
+  3. **Unit Test Execution**: Runs comprehensive test suite
+  4. **Coverage Analysis**: Generates and validates code coverage (80% minimum)
+  5. **Artifact Upload**: Stores test results and coverage reports
+
+#### 🔍 **Pull Request Checks** (`.github/workflows/pr-checks.yaml`)
+- **Enhanced validation** for pull requests to `main`/`develop`
+- **SwiftLint integration** for code style enforcement
+- **Coverage reporting** with automatic PR comments
+- **Delta analysis** on changed files only
+
+#### 📊 **Quality Gates**
+- ✅ **Minimum 80% code coverage** (currently 95%+)
+- ✅ **SwiftLint compliance** with custom rules
+- ✅ **Successful build** on iOS Simulator
+- ✅ **All unit tests passing**
+
+#### 🛠 **Code Quality Tools**
+- **SwiftLint**: Enforces Swift style and conventions
+- **Xcode Code Coverage**: Tracks test coverage metrics
+- **Custom Rules**: No print statements, proper error handling
+
+### Local Development
+```bash
+# Run tests locally
+cd VinylTracker_Clean/VinylTracker
+xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
+
+# Generate coverage report
+xcrun xccov view --report TestResults.xcresult
+
+# Run SwiftLint
+swiftlint lint --path VinylTracker --path VinylTrackerTests
+```
+
 ## TDD Implementation
 
 ### Test Coverage
@@ -176,6 +234,20 @@ VinylTracker/
     ├── ScannerViewUITests.swift
     └── VinylTrackerUITests.swift
 ```
+
+## Enhancements:
+- [x] Real Camera Integration - Replace mock scanner with actual camera
+- [ ] Redesign home screen - should see the possibilities of looking at your collection or adding an album
+- [ ] Ask to add an album to the collection - and extract relavent data for the data base
+- [ ] Data Persistence - Save albums between app launches
+- [ ] Search & Filtering - Search by title, artist, genre, year
+- [ ] Album Details View - Detailed view with cover images
+- [ ] Collection Statistics - Charts and analytics
+- [ ] Export/Import - Backup and restore collections
+- [ ] Album Artwork - Fetch cover images from APIs
+- [ ] Barcode Scanning - UPC/EAN recognition
+- [ ] Wishlist Feature - Track albums you want to buy
+- [ ] Social Features - Share collections
 
 ## Development Status
 

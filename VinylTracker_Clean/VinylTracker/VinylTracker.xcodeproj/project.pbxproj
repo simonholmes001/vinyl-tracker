@@ -12,37 +12,37 @@
 			containerPortal = E5394ED72E6C777B00F9ABEE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E5394EDE2E6C777B00F9ABEE;
-			remoteInfo = VinlyTracker;
+			remoteInfo = VinylTracker;
 		};
 		E5394EFA2E6C777C00F9ABEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E5394ED72E6C777B00F9ABEE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E5394EDE2E6C777B00F9ABEE;
-			remoteInfo = VinlyTracker;
+			remoteInfo = VinylTracker;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E5394EDF2E6C777B00F9ABEE /* VinlyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinlyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5394EEF2E6C777C00F9ABEE /* VinlyTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinlyTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5394EF92E6C777C00F9ABEE /* VinlyTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinlyTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5394EDF2E6C777B00F9ABEE /* VinylTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5394EEF2E6C777C00F9ABEE /* VinylTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinylTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5394EF92E6C777C00F9ABEE /* VinylTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinylTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E5394EE12E6C777B00F9ABEE /* VinlyTracker */ = {
+		E5394EE12E6C777B00F9ABEE /* VinylTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VinlyTracker;
+			path = VinylTracker;
 			sourceTree = "<group>";
 		};
-		E5394EF22E6C777C00F9ABEE /* VinlyTrackerTests */ = {
+		E5394EF22E6C777C00F9ABEE /* VinylTrackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VinlyTrackerTests;
+			path = VinylTrackerTests;
 			sourceTree = "<group>";
 		};
-		E5394EFC2E6C777C00F9ABEE /* VinlyTrackerUITests */ = {
+		E5394EFC2E6C777C00F9ABEE /* VinylTrackerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VinlyTrackerUITests;
+			path = VinylTrackerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		E5394ED62E6C777B00F9ABEE = {
 			isa = PBXGroup;
 			children = (
-				E5394EE12E6C777B00F9ABEE /* VinlyTracker */,
-				E5394EF22E6C777C00F9ABEE /* VinlyTrackerTests */,
-				E5394EFC2E6C777C00F9ABEE /* VinlyTrackerUITests */,
+				E5394EE12E6C777B00F9ABEE /* VinylTracker */,
+				E5394EF22E6C777C00F9ABEE /* VinylTrackerTests */,
+				E5394EFC2E6C777C00F9ABEE /* VinylTrackerUITests */,
 				E5394EE02E6C777B00F9ABEE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		E5394EE02E6C777B00F9ABEE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E5394EDF2E6C777B00F9ABEE /* VinlyTracker.app */,
-				E5394EEF2E6C777C00F9ABEE /* VinlyTrackerTests.xctest */,
-				E5394EF92E6C777C00F9ABEE /* VinlyTrackerUITests.xctest */,
+				E5394EDF2E6C777B00F9ABEE /* VinylTracker.app */,
+				E5394EEF2E6C777C00F9ABEE /* VinylTrackerTests.xctest */,
+				E5394EF92E6C777C00F9ABEE /* VinylTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E5394EDE2E6C777B00F9ABEE /* VinlyTracker */ = {
+		E5394EDE2E6C777B00F9ABEE /* VinylTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5394F032E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTracker" */;
+			buildConfigurationList = E5394F032E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinylTracker" */;
 			buildPhases = (
 				E5394EDB2E6C777B00F9ABEE /* Sources */,
 				E5394EDC2E6C777B00F9ABEE /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E5394EE12E6C777B00F9ABEE /* VinlyTracker */,
+				E5394EE12E6C777B00F9ABEE /* VinylTracker */,
 			);
-			name = VinlyTracker;
+			name = VinylTracker;
 			packageProductDependencies = (
 			);
-			productName = VinlyTracker;
-			productReference = E5394EDF2E6C777B00F9ABEE /* VinlyTracker.app */;
+			productName = VinylTracker;
+			productReference = E5394EDF2E6C777B00F9ABEE /* VinylTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E5394EEE2E6C777C00F9ABEE /* VinlyTrackerTests */ = {
+		E5394EEE2E6C777C00F9ABEE /* VinylTrackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5394F062E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTrackerTests" */;
+			buildConfigurationList = E5394F062E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinylTrackerTests" */;
 			buildPhases = (
 				E5394EEB2E6C777C00F9ABEE /* Sources */,
 				E5394EEC2E6C777C00F9ABEE /* Frameworks */,
@@ -131,18 +131,18 @@
 				E5394EF12E6C777C00F9ABEE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				E5394EF22E6C777C00F9ABEE /* VinlyTrackerTests */,
+				E5394EF22E6C777C00F9ABEE /* VinylTrackerTests */,
 			);
-			name = VinlyTrackerTests;
+			name = VinylTrackerTests;
 			packageProductDependencies = (
 			);
-			productName = VinlyTrackerTests;
-			productReference = E5394EEF2E6C777C00F9ABEE /* VinlyTrackerTests.xctest */;
+			productName = VinylTrackerTests;
+			productReference = E5394EEF2E6C777C00F9ABEE /* VinylTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E5394EF82E6C777C00F9ABEE /* VinlyTrackerUITests */ = {
+		E5394EF82E6C777C00F9ABEE /* VinylTrackerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5394F092E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTrackerUITests" */;
+			buildConfigurationList = E5394F092E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinylTrackerUITests" */;
 			buildPhases = (
 				E5394EF52E6C777C00F9ABEE /* Sources */,
 				E5394EF62E6C777C00F9ABEE /* Frameworks */,
@@ -154,13 +154,13 @@
 				E5394EFB2E6C777C00F9ABEE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				E5394EFC2E6C777C00F9ABEE /* VinlyTrackerUITests */,
+				E5394EFC2E6C777C00F9ABEE /* VinylTrackerUITests */,
 			);
-			name = VinlyTrackerUITests;
+			name = VinylTrackerUITests;
 			packageProductDependencies = (
 			);
-			productName = VinlyTrackerUITests;
-			productReference = E5394EF92E6C777C00F9ABEE /* VinlyTrackerUITests.xctest */;
+			productName = VinylTrackerUITests;
+			productReference = E5394EF92E6C777C00F9ABEE /* VinylTrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E5394EDA2E6C777B00F9ABEE /* Build configuration list for PBXProject "VinlyTracker" */;
+			buildConfigurationList = E5394EDA2E6C777B00F9ABEE /* Build configuration list for PBXProject "VinylTracker" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E5394EDE2E6C777B00F9ABEE /* VinlyTracker */,
-				E5394EEE2E6C777C00F9ABEE /* VinlyTrackerTests */,
-				E5394EF82E6C777C00F9ABEE /* VinlyTrackerUITests */,
+				E5394EDE2E6C777B00F9ABEE /* VinylTracker */,
+				E5394EEE2E6C777C00F9ABEE /* VinylTrackerTests */,
+				E5394EF82E6C777C00F9ABEE /* VinylTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		E5394EF12E6C777C00F9ABEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E5394EDE2E6C777B00F9ABEE /* VinlyTracker */;
+			target = E5394EDE2E6C777B00F9ABEE /* VinylTracker */;
 			targetProxy = E5394EF02E6C777C00F9ABEE /* PBXContainerItemProxy */;
 		};
 		E5394EFB2E6C777C00F9ABEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E5394EDE2E6C777B00F9ABEE /* VinlyTracker */;
+			target = E5394EDE2E6C777B00F9ABEE /* VinylTracker */;
 			targetProxy = E5394EFA2E6C777C00F9ABEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -395,10 +395,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VinlyTracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VinylTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -409,7 +411,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = VinylTracker.VinylTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -424,10 +426,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VinlyTracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VinylTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,7 +442,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = VinylTracker.VinylTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -454,14 +458,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = VinylTracker.VinylTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinlyTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VinlyTracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinylTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VinylTracker";
 			};
 			name = Debug;
 		};
@@ -473,14 +479,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = VinylTracker.VinylTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinlyTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VinlyTracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinylTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VinylTracker";
 			};
 			name = Release;
 		};
@@ -491,13 +499,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = VinylTracker.VinylTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = VinlyTracker;
+				TEST_TARGET_NAME = VinylTracker;
 			};
 			name = Debug;
 		};
@@ -508,20 +518,22 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = VinylTracker.VinylTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = VinlyTracker;
+				TEST_TARGET_NAME = VinylTracker;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E5394EDA2E6C777B00F9ABEE /* Build configuration list for PBXProject "VinlyTracker" */ = {
+		E5394EDA2E6C777B00F9ABEE /* Build configuration list for PBXProject "VinylTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5394F012E6C777C00F9ABEE /* Debug */,
@@ -530,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5394F032E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTracker" */ = {
+		E5394F032E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinylTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5394F042E6C777C00F9ABEE /* Debug */,
@@ -539,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5394F062E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTrackerTests" */ = {
+		E5394F062E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinylTrackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5394F072E6C777C00F9ABEE /* Debug */,
@@ -548,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5394F092E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinlyTrackerUITests" */ = {
+		E5394F092E6C777C00F9ABEE /* Build configuration list for PBXNativeTarget "VinylTrackerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5394F0A2E6C777C00F9ABEE /* Debug */,

@@ -11,19 +11,19 @@ struct AddAlbumView: View {
     @State private var label = ""
     @State private var showingValidationError = false
     @FocusState private var focusedField: Field?
-    
+
     let onAlbumAdded: (Album) -> Void
     @Environment(\.dismiss) private var dismiss
-    
+
     enum Field: Hashable {
         case title, artist, year, genre, label
     }
-    
+
     var isFormValid: Bool {
         !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
-        !artist.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            !artist.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
-    
+
     var body: some View {
         NavigationView {
             Form {
@@ -34,14 +34,14 @@ struct AddAlbumView: View {
                         .onSubmit {
                             focusedField = .artist
                         }
-                    
+
                     TextField("Artist", text: $artist)
                         .focused($focusedField, equals: .artist)
                         .submitLabel(.next)
                         .onSubmit {
                             focusedField = .year
                         }
-                    
+
                     TextField("Year (optional)", text: $year)
                         .focused($focusedField, equals: .year)
                         .keyboardType(.numberPad)
@@ -49,14 +49,14 @@ struct AddAlbumView: View {
                         .onSubmit {
                             focusedField = .genre
                         }
-                    
+
                     TextField("Genre (optional)", text: $genre)
                         .focused($focusedField, equals: .genre)
                         .submitLabel(.next)
                         .onSubmit {
                             focusedField = .label
                         }
-                    
+
                     TextField("Record Label (optional)", text: $label)
                         .focused($focusedField, equals: .label)
                         .submitLabel(.done)
@@ -66,14 +66,14 @@ struct AddAlbumView: View {
                             }
                         }
                 }
-                
+
                 Section {
                     Button("Save Album") {
                         saveAlbum()
                     }
                     .disabled(!isFormValid)
                 }
-                
+
                 Section(footer: Text("Album title and artist are required fields.")) {
                     EmptyView()
                 }
@@ -86,7 +86,7 @@ struct AddAlbumView: View {
                         dismiss()
                     }
                 }
-                
+
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
                         saveAlbum()
@@ -105,18 +105,18 @@ struct AddAlbumView: View {
             }
         }
     }
-    
+
     private func saveAlbum() {
         let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
         let trimmedArtist = artist.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+
         guard !trimmedTitle.isEmpty && !trimmedArtist.isEmpty else {
             showingValidationError = true
             return
         }
-        
+
         let yearInt = Int(year.trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0
-        
+
         let album = Album(
             title: trimmedTitle,
             artist: trimmedArtist,
@@ -124,7 +124,7 @@ struct AddAlbumView: View {
             genre: genre.trimmingCharacters(in: .whitespacesAndNewlines),
             label: label.trimmingCharacters(in: .whitespacesAndNewlines)
         )
-        
+
         onAlbumAdded(album)
     }
 }
@@ -134,4 +134,3 @@ struct AddAlbumView: View {
         print("Added: \(album.title) by \(album.artist)")
     }
 }
-
