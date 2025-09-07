@@ -75,13 +75,28 @@ class CameraPermissionManager {
     
     // MARK: - Settings Navigation
     
-    static func openSettings() {
+    static func openSettings(completion: @escaping (Bool) -> Void = { _ in }) {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            completion(false)
             return
         }
         
         if UIApplication.shared.canOpenURL(settingsUrl) {
-            UIApplication.shared.open(settingsUrl, completionHandler: nil)
+            UIApplication.shared.open(settingsUrl) { success in
+                completion(success)
+            }
+        } else {
+            completion(false)
         }
+    }
+    
+    // MARK: - Simulator Detection
+    
+    static var isRunningInSimulator: Bool {
+        #if targetEnvironment(simulator)
+        return true
+        #else
+        return false
+        #endif
     }
 }

@@ -399,6 +399,8 @@
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +430,8 @@
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +458,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerTests;
@@ -473,6 +479,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerTests;
@@ -491,6 +499,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +518,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PA85SU4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VinylTracker needs camera access to scan album covers";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VinylTracker needs photo library access to save scanned album covers";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = VinlyTracker.VinlyTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
