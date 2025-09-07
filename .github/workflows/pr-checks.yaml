@@ -9,7 +9,10 @@ jobs:
   pr-checks:
     name: PR Quality Checks
     runs-on: macos-latest
-    
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -127,3 +130,4 @@ jobs:
         path: |
           VinylTracker_Clean/VinylTracker/TestResults.xcresult
         retention-days: 30
+        if-no-files-found: warn

@@ -76,6 +76,7 @@ jobs:
       with:
         name: test-results
         path: VinylTracker_Clean/VinylTracker/TestResults.xcresult
+        if-no-files-found: warn
         
     - name: Upload coverage report
       uses: actions/upload-artifact@v4
@@ -83,6 +84,7 @@ jobs:
       with:
         name: coverage-report
         path: VinylTracker_Clean/VinylTracker/coverage.json
+        if-no-files-found: warn
 
   # Optional: SwiftLint for code quality
   swiftlint:
