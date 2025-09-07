@@ -43,7 +43,7 @@ jobs:
         CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- "*.swift" | tr '\n' ' ')
         if [ ! -z "$CHANGED_FILES" ]; then
           echo "Running SwiftLint on changed files: $CHANGED_FILES"
-          swiftlint lint --path VinylTracker --path VinylTrackerTests --reporter github-actions-logging
+          swiftlint lint --path VinylTracker --path VinylTrackerTests --reporter github-act
         else
           echo "No Swift files changed"
         fi
@@ -56,10 +56,10 @@ jobs:
         xcodebuild clean -project VinylTracker.xcodeproj -scheme VinylTracker
         
         # Build
-        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1'
+        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15'
         
         # Run tests with coverage
-        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1' -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
+        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15' -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
         
     - name: Generate and check coverage
       id: coverage-check
