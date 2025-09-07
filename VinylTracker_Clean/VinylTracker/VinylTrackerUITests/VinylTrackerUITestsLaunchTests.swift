@@ -1,13 +1,13 @@
 //
-//  VinlyTrackerUITestsLaunchTests.swift
-//  VinlyTrackerUITests
+//  VinylTrackerUITestsLaunchTests.swift
+//  VinylTrackerUITests
 //
 //  Created by Simon Holmes on 06/09/2025.
 //
 
 import XCTest
 
-final class VinlyTrackerUITestsLaunchTests: XCTestCase {
+final class VinylTrackerUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

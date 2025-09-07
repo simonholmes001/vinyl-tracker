@@ -145,14 +145,14 @@ This project uses **GitHub Actions** for continuous integration, ensuring code q
 ### Local Development
 ```bash
 # Run tests locally
-cd VinylTracker_Clean/VinlyTracker
-xcodebuild test -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
+cd VinylTracker_Clean/VinylTracker
+xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
 
 # Generate coverage report
 xcrun xccov view --report TestResults.xcresult
 
 # Run SwiftLint
-swiftlint lint --path VinlyTracker --path VinlyTrackerTests
+swiftlint lint --path VinylTracker --path VinylTrackerTests
 ```
 
 ## TDD Implementation

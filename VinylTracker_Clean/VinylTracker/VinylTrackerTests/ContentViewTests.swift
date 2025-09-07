@@ -2,7 +2,7 @@
 // Unit tests for ContentView, EmptyStateView, AlbumListView, AlbumRowView, and AlbumCollectionViewModel
 import XCTest
 import SwiftUI
-@testable import VinlyTracker
+@testable import VinylTracker
 
 final class ContentViewTests: XCTestCase {
     func testContentView_initialization() {

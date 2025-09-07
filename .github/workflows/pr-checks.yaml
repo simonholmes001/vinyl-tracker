@@ -25,7 +25,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: |
-          VinylTracker_Clean/VinlyTracker/VinlyTracker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+          VinylTracker_Clean/VinylTracker/VinylTracker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
           ~/Library/Developer/Xcode/DerivedData
         key: ${{ runner.os }}-xcode-${{ hashFiles('**/Package.resolved') }}
         
@@ -35,39 +35,39 @@ jobs:
         
     - name: Run SwiftLint on changed files
       run: |
-        cd VinylTracker_Clean/VinlyTracker
+        cd VinylTracker_Clean/VinylTracker
         # Get list of changed Swift files
         CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- "*.swift" | tr '\n' ' ')
         if [ ! -z "$CHANGED_FILES" ]; then
           echo "Running SwiftLint on changed files: $CHANGED_FILES"
-          swiftlint lint --path VinlyTracker --path VinlyTrackerTests --reporter github-actions-logging
+          swiftlint lint --path VinylTracker --path VinylTrackerTests --reporter github-actions-logging
         else
           echo "No Swift files changed"
         fi
         
     - name: Build and test
       run: |
-        cd VinylTracker_Clean/VinlyTracker
+        cd VinylTracker_Clean/VinylTracker
         
         # Clean build
-        xcodebuild clean -project VinlyTracker.xcodeproj -scheme VinlyTracker
+        xcodebuild clean -project VinylTracker.xcodeproj -scheme VinylTracker
         
         # Build
-        xcodebuild build -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1'
+        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1'
         
         # Run tests with coverage
-        xcodebuild test -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1' -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
+        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1' -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
         
     - name: Generate and check coverage
       id: coverage-check
       run: |
-        cd VinylTracker_Clean/VinlyTracker
+        cd VinylTracker_Clean/VinylTracker
         
         # Generate coverage report
         xcrun xccov view --report TestResults.xcresult
         
         # Extract coverage percentage
-        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinlyTracker.app" | awk '{print $4}' | sed 's/%//')
+        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinylTracker.app" | awk '{print $4}' | sed 's/%//')
         echo "Current coverage: $COVERAGE%"
         
         # Set minimum threshold
@@ -125,5 +125,5 @@ jobs:
       with:
         name: pr-test-results-${{ github.event.number }}
         path: |
-          VinylTracker_Clean/VinlyTracker/TestResults.xcresult
+          VinylTracker_Clean/VinylTracker/TestResults.xcresult
         retention-days: 30

@@ -1,6 +1,6 @@
 import XCTest
 import SwiftUI
-@testable import VinlyTracker
+@testable import VinylTracker
 
 class AddAlbumViewTests: XCTestCase {
     

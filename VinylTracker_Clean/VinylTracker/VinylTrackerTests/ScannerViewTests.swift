@@ -3,7 +3,7 @@
 
 import XCTest
 import SwiftUI
-@testable import VinlyTracker
+@testable import VinylTracker
 
 final class ScannerViewTests: XCTestCase {
     

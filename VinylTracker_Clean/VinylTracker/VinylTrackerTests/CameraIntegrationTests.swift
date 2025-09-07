@@ -5,7 +5,7 @@ import XCTest
 import SwiftUI
 import UIKit
 import AVFoundation
-@testable import VinlyTracker
+@testable import VinylTracker
 
 final class CameraIntegrationTests: XCTestCase {
     

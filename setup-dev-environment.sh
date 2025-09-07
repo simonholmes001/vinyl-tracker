@@ -6,7 +6,7 @@ echo "🚀 Setting up Vinyl Tracker development environment..."
 echo "======================================================="
 
 # Check if we're in the right directory
-if [ ! -f "VinylTracker_Clean/VinlyTracker/VinlyTracker.xcodeproj/project.pbxproj" ]; then
+if [ ! -f "VinylTracker_Clean/VinylTracker/VinylTracker.xcodeproj/project.pbxproj" ]; then
     echo "❌ ERROR: Run this script from the root of the vinyl-tracker repository"
     exit 1
 fi
@@ -29,18 +29,18 @@ echo "✅ Pre-commit hook permissions set"
 # Test the Xcode project
 echo ""
 echo "🧪 Testing Xcode project setup..."
-cd VinylTracker_Clean/VinlyTracker
+cd VinylTracker_Clean/VinylTracker
 
 # Check if Xcode project exists
-if [ ! -f "VinlyTracker.xcodeproj/project.pbxproj" ]; then
+if [ ! -f "VinylTracker.xcodeproj/project.pbxproj" ]; then
     echo "❌ ERROR: Xcode project not found"
-    echo "   Expected: VinylTracker_Clean/VinlyTracker/VinlyTracker.xcodeproj"
+    echo "   Expected: VinylTracker_Clean/VinylTracker/VinylTracker.xcodeproj"
     exit 1
 fi
 
 # Try a quick build test
 echo "🔨 Testing build configuration..."
-xcodebuild -project VinlyTracker.xcodeproj -scheme VinlyTracker -showdestinations | grep "iPhone 15" > /dev/null
+xcodebuild -project VinylTracker.xcodeproj -scheme VinylTracker -showdestinations | grep "iPhone 15" > /dev/null
 
 if [ $? -eq 0 ]; then
     echo "✅ iPhone 15 simulator destination available"

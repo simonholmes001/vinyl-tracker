@@ -1,5 +1,5 @@
 import XCTest
-@testable import VinlyTracker
+@testable import VinylTracker
 
 class AlbumTests: XCTestCase {
     

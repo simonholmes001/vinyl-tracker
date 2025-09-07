@@ -42,9 +42,9 @@ For local validation before commit, add to `.git/hooks/pre-commit`:
 
 ```bash
 #!/bin/sh
-cd VinylTracker_Clean/VinlyTracker
+cd VinylTracker_Clean/VinylTracker
 echo "Running tests before commit..."
-xcodebuild test -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' -quiet
+xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' -quiet
 if [ $? -ne 0 ]; then
     echo "❌ Tests failed! Commit blocked."
     exit 1

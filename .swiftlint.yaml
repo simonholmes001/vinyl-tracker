@@ -2,8 +2,8 @@
 
 # Included paths
 included:
-  - VinylTracker_Clean/VinlyTracker/VinlyTracker
-  - VinylTracker_Clean/VinlyTracker/VinlyTrackerTests
+  - VinylTracker_Clean/VinylTracker/VinylTracker
+  - VinylTracker_Clean/VinylTracker/VinylTrackerTests
 
 # Excluded paths
 excluded:

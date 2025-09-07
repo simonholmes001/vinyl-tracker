@@ -24,7 +24,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: |
-          VinylTracker_Clean/VinlyTracker/VinlyTracker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+          VinylTracker_Clean/VinylTracker/VinylTracker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
           ~/Library/Developer/Xcode/DerivedData
         key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
         restore-keys: |
@@ -32,36 +32,36 @@ jobs:
           
     - name: Clean build folder
       run: |
-        cd VinylTracker_Clean/VinlyTracker
-        xcodebuild clean -project VinlyTracker.xcodeproj -scheme VinlyTracker
+        cd VinylTracker_Clean/VinylTracker
+        xcodebuild clean -project VinylTracker.xcodeproj -scheme VinylTracker
         
     - name: Build project
       run: |
-        cd VinylTracker_Clean/VinlyTracker
-        xcodebuild build -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1'
+        cd VinylTracker_Clean/VinylTracker
+        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1'
         
     - name: Run unit tests
       run: |
-        cd VinylTracker_Clean/VinlyTracker
-        xcodebuild test -project VinlyTracker.xcodeproj -scheme VinlyTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1' -resultBundlePath TestResults.xcresult
+        cd VinylTracker_Clean/VinylTracker
+        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1' -resultBundlePath TestResults.xcresult
         
     - name: Generate code coverage report
       run: |
-        cd VinylTracker_Clean/VinlyTracker
+        cd VinylTracker_Clean/VinylTracker
         xcrun xccov view --report --json TestResults.xcresult > coverage.json
         
     - name: Parse coverage percentage
       id: coverage
       run: |
-        cd VinylTracker_Clean/VinlyTracker
-        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinlyTracker.app" | awk '{print $4}' | sed 's/%//')
+        cd VinylTracker_Clean/VinylTracker
+        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinylTracker.app" | awk '{print $4}' | sed 's/%//')
         echo "coverage=$COVERAGE" >> $GITHUB_OUTPUT
         echo "Code coverage: $COVERAGE%"
         
     - name: Check minimum coverage threshold
       run: |
-        cd VinylTracker_Clean/VinlyTracker
-        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinlyTracker.app" | awk '{print $4}' | sed 's/%//')
+        cd VinylTracker_Clean/VinylTracker
+        COVERAGE=$(xcrun xccov view --report TestResults.xcresult | grep "VinylTracker.app" | awk '{print $4}' | sed 's/%//')
         THRESHOLD=80
         if (( $(echo "$COVERAGE < $THRESHOLD" | bc -l) )); then
           echo "❌ Code coverage ($COVERAGE%) is below minimum threshold ($THRESHOLD%)"
@@ -75,14 +75,14 @@ jobs:
       if: always()
       with:
         name: test-results
-        path: VinylTracker_Clean/VinlyTracker/TestResults.xcresult
+        path: VinylTracker_Clean/VinylTracker/TestResults.xcresult
         
     - name: Upload coverage report
       uses: actions/upload-artifact@v4
       if: always()
       with:
         name: coverage-report
-        path: VinylTracker_Clean/VinlyTracker/coverage.json
+        path: VinylTracker_Clean/VinylTracker/coverage.json
 
   # Optional: SwiftLint for code quality
   swiftlint:
@@ -98,5 +98,5 @@ jobs:
       
     - name: Run SwiftLint
       run: |
-        cd VinylTracker_Clean/VinlyTracker
+        cd VinylTracker_Clean/VinylTracker
         swiftlint --reporter github-actions-logging
