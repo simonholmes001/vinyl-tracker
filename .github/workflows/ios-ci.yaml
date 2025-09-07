@@ -38,12 +38,12 @@ jobs:
     - name: Build project
       run: |
         cd VinylTracker_Clean/VinylTracker
-        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15'
+        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker
         
     - name: Run unit tests
       run: |
         cd VinylTracker_Clean/VinylTracker
-        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15' -resultBundlePath TestResults.xcresult
+        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -resultBundlePath TestResults.xcresult
         
     - name: Generate code coverage report
       run: |

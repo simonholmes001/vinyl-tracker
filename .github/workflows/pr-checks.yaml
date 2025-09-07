@@ -56,10 +56,10 @@ jobs:
         xcodebuild clean -project VinylTracker.xcodeproj -scheme VinylTracker
         
         # Build
-        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15'
+        xcodebuild build -project VinylTracker.xcodeproj -scheme VinylTracker 
         
         # Run tests with coverage
-        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -destination 'platform=iOS Simulator,name=iPhone 15' -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
+        xcodebuild test -project VinylTracker.xcodeproj -scheme VinylTracker -enableCodeCoverage YES -resultBundlePath TestResults.xcresult
         
     - name: Generate and check coverage
       id: coverage-check
