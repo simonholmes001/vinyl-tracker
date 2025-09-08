@@ -1,192 +1,166 @@
 // ContentView.swift
-// Main view controller following MVVM pattern
+// Modern landing page for VinylTracker
 
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = AlbumCollectionViewModel()
+    @State private var showingCollection = false
+    @State private var showingAddOptions = false
+    @State private var showingCheckOptions = false
     @State private var showingScanner = false
-    @State private var showingAddForm = false
-    @State private var showingDuplicateAlert = false
-    @State private var pendingAlbum: Album?
-
+    @State private var showingAddAlbum = false
+    
     var body: some View {
         NavigationView {
-            VStack {
-                if viewModel.albums.isEmpty {
-                    EmptyStateView()
-                } else {
-                    AlbumListView(albums: viewModel.albums, onDelete: viewModel.deleteAlbums)
-                }
-            }
-            .navigationTitle("Vinyl Collection (\(viewModel.albums.count))")
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button(action: { showingScanner = true }) {
-                        Image(systemName: "camera")
+            ZStack {
+                // Modern gradient background
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.purple.opacity(0.8),
+                        Color.blue.opacity(0.6),
+                        Color.cyan.opacity(0.4)
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                
+                VStack(spacing: 40) {
+                    Spacer()
+                    
+                    // App title and welcome message
+                    VStack(spacing: 16) {
+                        Text("🎵 Vinyl Tracker")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        
+                        Text("Organize your vinyl collection with ease")
+                            .font(.headline)
+                            .foregroundColor(.white.opacity(0.9))
+                            .multilineTextAlignment(.center)
                     }
-                    .accessibilityLabel("Scan Album")
-
-                    Button(action: { showingAddForm = true }) {
-                        Image(systemName: "plus")
+                    
+                    Spacer()
+                    
+                    // Action cards
+                    VStack(spacing: 20) {
+                        LandingActionCard(
+                            icon: "opticaldisc",
+                            title: "View Collection",
+                            subtitle: "Browse your vinyl albums"
+                        ) {
+                            showingCollection = true
+                        }
+                        
+                        LandingActionCard(
+                            icon: "plus.circle",
+                            title: "Add Album",
+                            subtitle: "Scan or enter manually"
+                        ) {
+                            showingAddOptions = true
+                        }
+                        
+                        LandingActionCard(
+                            icon: "magnifyingglass.circle",
+                            title: "Check Album",
+                            subtitle: "Verify if you own this album"
+                        ) {
+                            showingCheckOptions = true
+                        }
                     }
-                    .accessibilityLabel("Add Album")
+                    .padding(.horizontal, 20)
+                    
+                    Spacer()
                 }
-            }
-            .sheet(isPresented: $showingScanner) {
-                ScannerView { album in
-                    handleNewAlbum(album)
-                    showingScanner = false
-                }
-            }
-            .sheet(isPresented: $showingAddForm) {
-                AddAlbumView { album in
-                    handleNewAlbum(album)
-                    showingAddForm = false
-                }
-            }
-            .alert("Duplicate Album", isPresented: $showingDuplicateAlert) {
-                Button("Add Anyway") {
-                    if let album = pendingAlbum {
-                        viewModel.addAlbum(album, allowDuplicates: true)
-                        pendingAlbum = nil
-                    }
-                }
-                Button("Cancel", role: .cancel) {
-                    pendingAlbum = nil
-                }
-            } message: {
-                Text("This album appears to already be in your collection. Add it anyway?")
             }
         }
-    }
-
-    private func handleNewAlbum(_ album: Album) {
-        if viewModel.hasDuplicate(album) {
-            pendingAlbum = album
-            showingDuplicateAlert = true
-        } else {
-            viewModel.addAlbum(album)
+        .sheet(isPresented: $showingCollection) {
+            AlbumCollectionView()
+        }
+        .sheet(isPresented: $showingScanner) {
+            ScannerView { album in
+                // Handle the scanned album if needed
+                showingScanner = false
+            }
+        }
+        .sheet(isPresented: $showingAddAlbum) {
+            AddAlbumView { album in
+                // Handle the added album if needed
+                showingAddAlbum = false
+            }
+        }
+        .actionSheet(isPresented: $showingAddOptions) {
+            ActionSheet(
+                title: Text("Add Album"),
+                message: Text("How would you like to add an album?"),
+                buttons: [
+                    .default(Text("📸 Scan with Camera")) {
+                        showingScanner = true
+                    },
+                    .default(Text("✍️ Add Manually")) {
+                        showingAddAlbum = true
+                    },
+                    .cancel()
+                ]
+            )
+        }
+        .actionSheet(isPresented: $showingCheckOptions) {
+            ActionSheet(
+                title: Text("Check Album"),
+                message: Text("How would you like to check for an album?"),
+                buttons: [
+                    .default(Text("📸 Scan with Camera")) {
+                        showingScanner = true
+                    },
+                    .default(Text("✍️ Search Manually")) {
+                        showingAddAlbum = true
+                    },
+                    .cancel()
+                ]
+            )
         }
     }
 }
 
-struct EmptyStateView: View {
+// Modern action card component
+struct LandingActionCard: View {
+    let icon: String
+    let title: String
+    let subtitle: String
+    let action: () -> Void
+    
     var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "music.note")
-                .font(.system(size: 60))
-                .foregroundColor(.secondary)
-
-            Text("No Albums Yet")
-                .font(.title2)
-                .fontWeight(.medium)
-
-            Text("Start building your vinyl collection by scanning album covers or adding them manually")
-                .font(.body)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
-        }
-        .padding()
-    }
-}
-
-struct AlbumListView: View {
-    let albums: [Album]
-    let onDelete: (IndexSet) -> Void
-
-    var body: some View {
-        List {
-            ForEach(albums) { album in
-                AlbumRowView(album: album)
-            }
-            .onDelete(perform: onDelete)
-        }
-        .listStyle(PlainListStyle())
-    }
-}
-
-struct AlbumRowView: View {
-    let album: Album
-
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(album.displayTitle)
-                    .font(.headline)
-                    .lineLimit(1)
-
-                Text(album.displayArtist)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .lineLimit(1)
-
-                HStack {
-                    if !album.yearString.isEmpty {
-                        Text(album.yearString)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
-
-                    if !album.genre.isEmpty {
-                        Text("• \(album.genre)")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
+        Button(action: action) {
+            HStack(spacing: 16) {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundColor(.purple)
+                    .frame(width: 30)
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
-            }
-
-            Spacer()
-
-            if !album.genre.isEmpty {
-                Text(album.genre)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
                     .font(.caption)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 2)
-                    .background(Color.blue.opacity(0.2))
-                    .foregroundColor(.blue)
-                    .cornerRadius(4)
+                    .foregroundColor(.secondary)
             }
+            .padding()
+            .background(.ultraThinMaterial)
+            .cornerRadius(12)
         }
-        .padding(.vertical, 2)
-    }
-}
-
-// MARK: - ViewModel (Following MVVM + TDD)
-
-@MainActor
-class AlbumCollectionViewModel: ObservableObject {
-    @Published var albums: [Album] = []
-
-    func addAlbum(_ album: Album, allowDuplicates: Bool = false) {
-        guard album.isValid else { return }
-
-        if !allowDuplicates && hasDuplicate(album) {
-            return // Duplicate detected
-        }
-
-        albums.append(album)
-        sortAlbums()
-    }
-
-    func deleteAlbums(at offsets: IndexSet) {
-        albums.remove(atOffsets: offsets)
-    }
-
-    func hasDuplicate(_ album: Album) -> Bool {
-        albums.contains { existing in
-            existing.isSimilarTo(album)
-        }
-    }
-
-    private func sortAlbums() {
-        albums.sort { first, second in
-            if first.artist.lowercased() == second.artist.lowercased() {
-                return first.title.lowercased() < second.title.lowercased()
-            }
-            return first.artist.lowercased() < second.artist.lowercased()
-        }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
