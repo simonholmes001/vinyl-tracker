@@ -1,6 +1,3 @@
-// Album.swift
-// Core data model with TDD validation
-
 import Foundation
 import UIKit
 

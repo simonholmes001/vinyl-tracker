@@ -1,6 +1,3 @@
-// VinylTrackerApp.swift
-// Main app entry point
-
 import SwiftUI
 
 @main

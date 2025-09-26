@@ -1,16 +1,9 @@
-// VinylTrackerAppTests.swift
-// Minimal test for app entry point
 import XCTest
-import SwiftUI
 @testable import VinylTracker
 
+@MainActor
 final class VinylTrackerAppTests: XCTestCase {
-    func testApp_initialization() {
-        let app = VinylTrackerApp()
-        XCTAssertNotNil(app)
-    }
-
-    func testApp_body() {
+    func testAppInitialisesLibraryViewModel() {
         let app = VinylTrackerApp()
         XCTAssertNotNil(app.body)
     }

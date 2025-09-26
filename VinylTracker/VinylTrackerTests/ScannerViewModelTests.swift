@@ -1,7 +1,6 @@
 import XCTest
 @testable import VinylTracker
 
-@MainActor
 final class ScannerViewModelTests: XCTestCase {
     func testDuplicateLookupFindsExistingAlbum() {
         let storageURL = FileManager.default.temporaryDirectory

@@ -1,7 +1,6 @@
 import XCTest
 @testable import VinylTracker
 
-@MainActor
 final class VinylTrackerTests: XCTestCase {
     func testLibraryViewModelAddsAlbum() {
         let storageURL = FileManager.default.temporaryDirectory

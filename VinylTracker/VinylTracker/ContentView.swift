@@ -8,7 +8,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            AlbumCollectionView(
+            AlbumLibraryView(
                 onAddAlbum: handleAddAlbum,
                 onScanAlbum: handleScanAlbum
             )
@@ -16,7 +16,7 @@ struct ContentView: View {
                 Label("Library", systemImage: "opticaldisc")
             }
 
-            CollectionManagementView(
+            CollectionListView(
                 onAddAlbum: handleAddAlbum,
                 onScanAlbum: handleScanAlbum
             )
